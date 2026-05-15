@@ -7,7 +7,8 @@
   height: 84px;
   justify-content: space-between;
   padding: 0 var(--page-gutter);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: var(--z-header);
 }
 
