@@ -60,10 +60,8 @@ export function GsapAnimations() {
       };
 
       gsap.to('[data-gsap="hero-image"]', {
-        x: -18,
-        y: 12,
-        scale: 1.018,
-        rotation: -34.2,
+        y: 8,
+        scale: 1.012,
         duration: 12,
         repeat: -1,
         yoyo: true,

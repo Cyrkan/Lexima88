@@ -13,12 +13,12 @@ export function Hero() {
         <Image
           src="/images/hero-orbit.avif"
           alt=""
-          width={2592}
-          height={1824}
+          width={1896}
+          height={1909}
           priority
           fetchPriority="high"
-          quality={62}
-          sizes="(max-width: 767px) 420px, (max-width: 1023px) 760px, 1080px"
+          quality={70}
+          sizes="(max-width: 767px) 420px, (max-width: 1023px) 720px, 960px"
           className={styles.heroImage}
           data-gsap="hero-image-core"
         />

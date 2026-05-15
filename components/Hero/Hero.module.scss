@@ -20,24 +20,21 @@
 }
 
 .imageWrap {
-  height: 1453px;
-  left: calc(var(--page-gutter) + 150px);
+  height: 694px;
   overflow: hidden;
   position: absolute;
-  top: -438px;
-  transform: rotate(-35.03deg);
-  width: 1478px;
+  right: 0;
+  top: 65px;
+  width: 948px;
 }
 
 .heroImage {
   filter: brightness(1.16) saturate(1.08);
-  height: 74.52%;
-  left: 10.24%;
+  height: 100%;
   max-width: none;
   object-fit: cover;
-  position: absolute;
-  top: 25.48%;
-  width: 104.15%;
+  object-position: center;
+  width: 100%;
 }
 
 .starfield {
@@ -183,13 +180,6 @@
 }
 
 @media (min-width: 1920px) {
-  .imageWrap {
-    height: 1953px;
-    left: calc(var(--page-gutter) - 68px);
-    top: -546px;
-    width: 1986px;
-  }
-
   .content {
     max-width: 894px;
   }
@@ -199,21 +189,11 @@
   }
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
-  .imageWrap {
-    height: 1953px;
-    left: calc(var(--page-gutter) - 68px);
-    top: -546px;
-    width: 1986px;
-  }
-}
-
 @media (max-width: 1599px) {
   .imageWrap {
-    height: 1453px;
-    left: 420px;
-    top: -394px;
-    width: 1478px;
+    height: 600px;
+    top: 60px;
+    width: 820px;
   }
 }
 
@@ -227,16 +207,9 @@
   }
 
   .imageWrap {
-    left: 330px;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1599px) {
-  .imageWrap {
-    height: 1953px;
-    left: calc(var(--page-gutter) - 68px);
-    top: -546px;
-    width: 1986px;
+    height: 520px;
+    top: 80px;
+    width: 700px;
   }
 }
 
@@ -264,11 +237,11 @@
   }
 
   .imageWrap {
-    height: 1543px;
-    left: -423px;
+    height: 480px;
     opacity: 0.9;
-    top: -227px;
-    width: 1544px;
+    right: -120px;
+    top: 200px;
+    width: 600px;
   }
 }
 
@@ -278,11 +251,11 @@
   }
 
   .imageWrap {
-    height: 825px;
-    left: -258px;
+    height: 420px;
     opacity: 0.86;
-    top: 154px;
-    width: 825px;
+    right: -100px;
+    top: 280px;
+    width: 460px;
   }
 
   .glowOne {
