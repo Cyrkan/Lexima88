@@ -14,8 +14,13 @@
 
 .logo {
   display: inline-flex;
-  height: 22px;
-  width: 75px;
+  height: 28px;
+  width: 95px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
 
   &:focus-visible {
     @include focus-ring;
@@ -110,8 +115,7 @@
 
   .logo {
     height: 28px;
-    overflow: hidden;
-    width: 55px;
+    width: 95px;
   }
 
   .nav,

@@ -52,6 +52,11 @@
   height: 22px;
   width: 75px;
 
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
   &:focus-visible {
     @include focus-ring;
   }
