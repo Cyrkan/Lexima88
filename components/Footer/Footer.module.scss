@@ -1,0 +1,78 @@
+@use "../../styles/mixins" as *;
+
+.footer {
+  align-items: center;
+  background: var(--color-footer);
+  border-top: 1.017px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  min-height: 86px;
+  padding: 32px var(--page-gutter);
+
+  nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  a {
+    border-bottom: 1px solid transparent;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 20px;
+    transition: border-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
+
+    &:hover {
+      color: #3da7ff;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      border-bottom-color: #3da7ff;
+      color: rgba(61, 167, 255, 0.8);
+    }
+
+    &:focus-visible {
+      border-radius: 16px;
+      outline: 1px solid #3da7ff;
+      outline-offset: 9px;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.72);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  height: 22px;
+  width: 75px;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 192px;
+    padding: 32px 48px;
+
+    nav {
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .withHome {
+    min-height: 222px;
+  }
+}

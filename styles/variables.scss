@@ -1,0 +1,33 @@
+:root {
+  --color-page: #f4f4ff;
+  --color-ink: #101828;
+  --color-muted: #4a5565;
+  --color-muted-soft: #6a7282;
+  --color-white: #ffffff;
+  --color-blue: #2463eb;
+  --color-blue-light: #399bed;
+  --color-blue-soft: #eff6ff;
+  --color-navy: #080c19;
+  --color-footer: #0a0d1a;
+  --color-card-border: #f3f4f6;
+
+  --font-display: Verdana, Geneva, sans-serif;
+  --font-body: Verdana, Geneva, sans-serif;
+  --font-ui: var(--font-inter), Inter, Arial, sans-serif;
+
+  --space-page-x: 48px;
+  --space-section-y: 80px;
+  --radius-button: 16px;
+  --radius-card: 16px;
+  --shadow-card: 0 1px 1.5px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0 4px 4px rgba(255, 255, 255, 0.18);
+  --transition-base: 180ms ease;
+  --z-header: 20;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --space-page-x: 24px;
+    --space-section-y: 56px;
+  }
+}

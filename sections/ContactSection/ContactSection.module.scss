@@ -1,0 +1,148 @@
+@use "../../styles/mixins" as *;
+
+.contact {
+  align-items: flex-start;
+  background: var(--color-page);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 350px;
+  padding: var(--space-section-y) var(--page-gutter);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  p {
+    @include section-label;
+
+    margin-bottom: -14px;
+  }
+
+  h2 {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    max-width: 324px;
+  }
+
+  span {
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 828px;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  gap: 23px;
+}
+
+.detail {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+
+  > span:last-child {
+    color: var(--color-ink);
+    display: grid;
+    font-family: var(--font-ui);
+    font-size: 18px;
+    font-weight: 500;
+    gap: 4px;
+    line-height: 28px;
+  }
+
+  small {
+    color: var(--color-muted);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &:is(a) {
+    transition: transform var(--transition-base);
+
+    &:hover {
+      transform: translateX(2px);
+
+      .icon {
+        transform: scale(1.06);
+      }
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}
+
+.icon {
+  align-items: center;
+  background: var(--color-white);
+  border-radius: 999px;
+  display: flex;
+  flex: 0 0 auto;
+  height: 48px;
+  justify-content: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  width: 48px;
+
+  &:hover {
+    box-shadow: 0 12px 22px rgba(36, 99, 235, 0.12);
+  }
+
+  svg {
+    fill: none;
+    height: 24px;
+    stroke: var(--color-blue);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+    width: 24px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .contact {
+    min-height: 312px;
+  }
+
+  .copy h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 639px) {
+  .contact {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    row-gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    min-height: 414px;
+  }
+
+  .copy h2 {
+    font-size: 24px;
+  }
+
+  .copy p {
+    font-size: 10px;
+  }
+
+  .detail > span:last-child {
+    font-size: 16px;
+  }
+}

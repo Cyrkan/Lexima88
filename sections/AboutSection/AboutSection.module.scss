@@ -1,0 +1,156 @@
+@use "../../styles/mixins" as *;
+
+.about {
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at 86% 12%, rgba(36, 99, 235, 0.16), transparent 29%),
+    linear-gradient(180.276deg, #0d0c14 17.11%, #3e3c6d 99.183%);
+  background-size: 120% 120%, 100% 100%;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 376px;
+  padding: var(--space-section-y) var(--page-gutter);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  h2 {
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    max-width: 828px;
+  }
+
+  > p:last-child {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 828px;
+  }
+}
+
+.eyebrow {
+  @include section-label;
+
+  color: #3da7ff;
+  margin-bottom: -14px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.feature {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  transition: transform 240ms ease;
+
+  &:hover {
+    transform: translateX(5px);
+
+    .icon {
+      background: rgba(30, 58, 138, 0.48);
+      transform: scale(1.05);
+    }
+  }
+
+  > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  h3 {
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.icon {
+  align-items: center;
+  background: rgba(30, 58, 138, 0.3);
+  border-radius: 999px;
+  display: flex;
+  flex: 0 0 auto;
+  height: 48px;
+  justify-content: center;
+  position: relative;
+  transition: background-color 240ms ease, transform 240ms ease;
+  width: 48px;
+
+  svg {
+    fill: none;
+    height: 24px;
+    stroke: #3da7ff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.75;
+    width: 24px;
+  }
+
+  span {
+    background: var(--color-blue);
+    border-radius: 999px;
+    height: 12px;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    width: 12px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .about {
+    min-height: 484px;
+  }
+
+  .copy h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 639px) {
+  .about {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    row-gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    min-height: 724px;
+  }
+
+  .copy h2 {
+    font-size: 24px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+
+  .feature {
+    align-items: flex-start;
+  }
+}

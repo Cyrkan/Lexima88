@@ -1,0 +1,281 @@
+@use "../../styles/mixins" as *;
+
+.main {
+  background: linear-gradient(181.16deg, #0d0c14 17.11%, #3e3c6d 99.18%);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 64px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1024px;
+  width: calc(100% - 48px);
+}
+
+.hero {
+  margin-left: 24px;
+  max-width: 672px;
+
+  h1 {
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 60px;
+    margin-top: 20px;
+  }
+}
+
+.eyebrow {
+  color: #60a5fa;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 29.25px;
+  }
+}
+
+.card {
+  background: linear-gradient(128.39deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 24px;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-inline: 24px;
+  padding: 48px;
+}
+
+.item {
+  display: flex;
+  gap: 24px;
+}
+
+.number {
+  align-items: center;
+  background: #ddd6fe;
+  border-radius: 999px;
+  color: #101828;
+  display: flex;
+  flex: 0 0 48px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  height: 48px;
+  justify-content: center;
+  line-height: 28px;
+  width: 48px;
+}
+
+.content {
+  color: #364153;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+
+  h2,
+  h3,
+  p,
+  li {
+    font-family: var(--font-display);
+  }
+
+  h2 {
+    color: #101828;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  h3 {
+    color: #101828;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 0 0 8px;
+  }
+
+  p,
+  li {
+    color: #364153;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style-position: outside;
+    margin: 0;
+    padding-left: 20px;
+  }
+}
+
+.lead {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.columns {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.singleColumn {
+  grid-template-columns: 1fr;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  a {
+    color: #2463eb;
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 20px;
+    transition: color var(--transition-base);
+
+    &:hover {
+      color: #1d4ed8;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}
+
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .privacy {
+    .hero,
+    .card {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+    }
+
+    .card {
+      gap: 28px;
+    }
+  }
+
+  .terms {
+    .hero,
+    .card {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
+    .card {
+      gap: 27px;
+    }
+
+    .content {
+      h2,
+      h3,
+      p,
+      li,
+      a {
+        font-family: var(--font-ui);
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    background: linear-gradient(186.9deg, #0d0c14 17.11%, #3e3c6d 99.18%);
+    padding: 48px 16px;
+  }
+
+  .container {
+    gap: 48px;
+    max-width: 328px;
+    width: 100%;
+  }
+
+  .hero {
+    margin: 0 !important;
+    max-width: none;
+
+    h1 {
+      font-size: 30px;
+      line-height: 60px;
+      margin-top: 10px;
+    }
+  }
+
+  .terms .hero h1 {
+    max-width: 280px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 16px;
+  }
+
+  .intro {
+    margin-top: 18px;
+  }
+
+  .card {
+    gap: 24px;
+    margin: 0 !important;
+    padding: 24px 16px;
+  }
+
+  .item {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .content {
+    gap: 12px;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

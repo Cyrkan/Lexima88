@@ -1,0 +1,355 @@
+@use "../../styles/mixins" as *;
+
+.hero {
+  background:
+    radial-gradient(circle at 17% 92%, rgba(85, 80, 139, 0.7) 0, rgba(85, 80, 139, 0) 25%),
+    linear-gradient(118deg, #0b0d16 4%, #101328 38%, #111f5d 100%);
+  height: 760px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::before {
+  background: linear-gradient(116deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.035) 44%, rgba(255, 255, 255, 0) 68%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-24%);
+  z-index: 1;
+}
+
+.imageWrap {
+  height: 1453px;
+  left: calc(var(--page-gutter) + 150px);
+  overflow: hidden;
+  position: absolute;
+  top: -438px;
+  transform: rotate(-35.03deg);
+  width: 1478px;
+}
+
+.heroImage {
+  filter: brightness(1.16) saturate(1.08);
+  height: 74.52%;
+  left: 10.24%;
+  max-width: none;
+  object-fit: cover;
+  position: absolute;
+  top: 25.48%;
+  width: 104.15%;
+}
+
+.starfield {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.58) 0 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(57, 155, 237, 0.48) 0 1px, transparent 1.3px);
+  background-position: 0 0, 48px 24px;
+  background-size: 148px 148px, 212px 212px;
+  inset: 0;
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 34%, rgba(0, 0, 0, 0.85) 100%);
+  opacity: 0.22;
+  pointer-events: none;
+  position: absolute;
+}
+
+.orbitLineOne,
+.orbitLineTwo {
+  border: 1px solid rgba(57, 155, 237, 0.28);
+  border-left-color: transparent;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 18px rgba(57, 155, 237, 0.32));
+  pointer-events: none;
+  position: absolute;
+}
+
+.orbitLineOne {
+  height: 730px;
+  right: -190px;
+  top: 126px;
+  transform: rotate(-28deg);
+  width: 650px;
+}
+
+.orbitLineTwo {
+  height: 590px;
+  right: -158px;
+  top: 206px;
+  transform: rotate(18deg);
+  width: 520px;
+}
+
+.glowOne,
+.glowTwo {
+  border-radius: 99999px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.glowOne {
+  background: #2463eb;
+  filter: blur(200px);
+  height: 800px;
+  left: calc(var(--page-gutter) + 722px);
+  opacity: 0.4;
+  top: -20px;
+  width: 800px;
+}
+
+.glowTwo {
+  background: #6366f1;
+  filter: blur(150px);
+  height: 600px;
+  left: calc(var(--page-gutter) + 922px);
+  opacity: 0.3;
+  top: 80px;
+  width: 600px;
+}
+
+.content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 894px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--page-gutter);
+  width: min(894px, calc(100% - (var(--page-gutter) * 2)));
+  z-index: 1;
+
+  h1 {
+    color: var(--color-white);
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    margin-bottom: -4px;
+    max-width: 894px;
+  }
+}
+
+.eyebrow {
+  @include section-label;
+
+  color: var(--color-blue-light);
+  margin-bottom: -12px;
+}
+
+.copy {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 29.25px;
+  max-width: 577px;
+}
+
+.button {
+  align-items: center;
+  background: #3da7ff;
+  border-radius: var(--radius-button);
+  box-shadow: var(--shadow-button);
+  color: var(--color-white);
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  height: 64px;
+  justify-content: center;
+  letter-spacing: 0;
+  min-width: 195px;
+  padding: 0 40px;
+  text-transform: uppercase;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+
+  &:hover {
+    background: #1990f3;
+    box-shadow: var(--shadow-button-hover);
+  }
+
+  &:focus-visible {
+    background: #3da7ff;
+    box-shadow: var(--shadow-button);
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  &:active {
+    background: #1081df;
+    box-shadow: var(--shadow-button-hover);
+  }
+}
+
+@media (min-width: 1920px) {
+  .imageWrap {
+    height: 1953px;
+    left: calc(var(--page-gutter) - 68px);
+    top: -546px;
+    width: 1986px;
+  }
+
+  .content {
+    max-width: 894px;
+  }
+
+  .copy {
+    max-width: 748px;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .imageWrap {
+    height: 1953px;
+    left: calc(var(--page-gutter) - 68px);
+    top: -546px;
+    width: 1986px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .imageWrap {
+    height: 1453px;
+    left: 420px;
+    top: -394px;
+    width: 1478px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .content {
+    max-width: 570px;
+
+    h1 {
+      font-size: 62px;
+    }
+  }
+
+  .imageWrap {
+    left: 330px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .imageWrap {
+    height: 1953px;
+    left: calc(var(--page-gutter) - 68px);
+    top: -546px;
+    width: 1986px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    height: 700px;
+  }
+
+  .content {
+    left: var(--page-gutter);
+    max-width: 658px;
+    top: 68px;
+    transform: none;
+    width: min(658px, calc(100% - (var(--page-gutter) * 2)));
+
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  .copy {
+    font-size: 16px;
+    line-height: 29.25px;
+    max-width: 577px;
+  }
+
+  .imageWrap {
+    height: 1543px;
+    left: -423px;
+    opacity: 0.9;
+    top: -227px;
+    width: 1544px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    height: 700px;
+  }
+
+  .imageWrap {
+    height: 825px;
+    left: -258px;
+    opacity: 0.86;
+    top: 154px;
+    width: 825px;
+  }
+
+  .glowOne {
+    height: 440px;
+    left: 10%;
+    top: 40px;
+    width: 440px;
+  }
+
+  .glowTwo {
+    height: 380px;
+    left: 32%;
+    top: 120px;
+    width: 380px;
+  }
+
+  .content {
+    gap: 28px;
+    left: 20px;
+    max-width: 320px;
+    top: 32px;
+    transform: none;
+    width: calc(100% - 40px);
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: -10px;
+    }
+  }
+
+  .eyebrow {
+    margin-bottom: -18px;
+  }
+
+  .copy {
+    font-size: 16px;
+    line-height: 29.25px;
+  }
+
+  .button {
+    height: 54px;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .imageWrap,
+  .heroImage,
+  .starfield,
+  .orbitLineOne,
+  .orbitLineTwo,
+  .glowOne,
+  .glowTwo {
+    transform: none;
+  }
+}
