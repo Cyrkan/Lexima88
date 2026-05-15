@@ -23,13 +23,14 @@
   height: 694px;
   overflow: hidden;
   position: absolute;
-  right: 0;
+  right: max(0px, calc((100vw - 1920px) / 2));
   top: 65px;
   width: 948px;
 }
 
 .heroImage {
-  filter: brightness(1.16) saturate(1.08);
+  clip-path: ellipse(55% 74% at 66% 75%);
+  filter: brightness(1.12) saturate(1.08);
   height: 100%;
   max-width: none;
   object-fit: cover;
@@ -39,15 +40,19 @@
 
 .starfield {
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.58) 0 1px, transparent 1.4px),
-    radial-gradient(circle, rgba(57, 155, 237, 0.48) 0 1px, transparent 1.3px);
-  background-position: 0 0, 48px 24px;
-  background-size: 148px 148px, 212px 212px;
-  inset: 0;
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 34%, rgba(0, 0, 0, 0.85) 100%);
-  opacity: 0.22;
+    radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.45px),
+    radial-gradient(circle, rgba(57, 155, 237, 0.54) 0 1px, transparent 1.35px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.48) 0 0.75px, transparent 1.15px);
+  background-position: 0 0, 48px 24px, 116px 78px;
+  background-size: 148px 148px, 212px 212px, 284px 284px;
+  height: 1451.1px;
+  left: calc((100vw - 1920px) / 2 + 670.82px);
+  mask-image: radial-gradient(circle at 58% 44%, rgba(0, 0, 0, 0.95) 0 38%, rgba(0, 0, 0, 0.5) 60%, transparent 84%);
+  opacity: 0.27;
   pointer-events: none;
   position: absolute;
+  top: 60.91px;
+  width: 1636.6px;
 }
 
 .orbitLineOne,
@@ -191,10 +196,23 @@
 
 @media (max-width: 1599px) {
   .imageWrap {
-    height: 800px;
-    right: -40px;
-    top: -20px;
-    width: 800px;
+    height: 694px;
+    right: 0;
+    top: 155px;
+    width: 948px;
+  }
+
+  .starfield {
+    height: 1224.04px;
+    left: 502.48px;
+    top: 60.72px;
+    width: 1228.72px;
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1280px) {
+  .imageWrap {
+    right: calc(100vw - 1440px);
   }
 }
 
@@ -208,10 +226,10 @@
   }
 
   .imageWrap {
-    height: 720px;
-    right: -40px;
-    top: 20px;
-    width: 720px;
+    height: 659px;
+    right: -250px;
+    top: 180px;
+    width: 900px;
   }
 }
 
@@ -239,11 +257,18 @@
   }
 
   .imageWrap {
-    height: 720px;
+    height: 694px;
     opacity: 1;
-    right: -240px;
-    top: 220px;
-    width: 720px;
+    right: -575px;
+    top: 356px;
+    width: 948px;
+  }
+
+  .starfield {
+    height: 1230.68px;
+    left: 422.57px;
+    top: 320px;
+    width: 1257.42px;
   }
 }
 
@@ -253,11 +278,18 @@
   }
 
   .imageWrap {
-    height: 540px;
+    height: 439px;
     opacity: 1;
-    right: -90px;
-    top: 380px;
-    width: 540px;
+    right: -365px;
+    top: 465px;
+    width: 600px;
+  }
+
+  .starfield {
+    height: 799.2px;
+    left: 199.38px;
+    top: 420px;
+    width: 810.19px;
   }
 
   .glowOne {

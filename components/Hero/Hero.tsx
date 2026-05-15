@@ -11,14 +11,13 @@ export function Hero() {
       <div className={styles.orbitLineTwo} aria-hidden="true" data-gsap="hero-orbit-two" />
       <div className={styles.imageWrap} aria-hidden="true" data-gsap="hero-image">
         <Image
-          src="/images/hero-orbit.avif"
+          src="/images/hero-planet-figma.avif"
           alt=""
-          width={1900}
-          height={1900}
+          width={948}
+          height={694}
           priority
           fetchPriority="high"
-          quality={70}
-          sizes="(max-width: 767px) 420px, (max-width: 1023px) 720px, 960px"
+          sizes="(max-width: 767px) 600px, (max-width: 1023px) 948px, 948px"
           className={styles.heroImage}
           data-gsap="hero-image-core"
         />
