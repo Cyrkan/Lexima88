@@ -28,19 +28,19 @@ export function LegalPage({ title, intro, sections, variant }: LegalPageProps) {
       <Header />
       <main className={styles.main}>
         <div className={`${styles.container} ${styles[variant]}`}>
-          <section className={styles.hero} aria-labelledby="legal-title" data-gsap="legal-hero">
-            <p className={styles.eyebrow} data-gsap="legal-hero-item">Legal</p>
-            <h1 id="legal-title" data-gsap="legal-hero-item">{title}</h1>
+          <section className={styles.hero} aria-labelledby="legal-title">
+            <p className={styles.eyebrow}>Legal</p>
+            <h1 id="legal-title">{title}</h1>
             <div className={styles.intro}>
               {intro.map((paragraph) => (
-                <p key={paragraph} data-gsap="legal-hero-item">{paragraph}</p>
+                <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
           </section>
 
-          <section className={styles.card} aria-label={`${title} details`} data-gsap="legal-card">
+          <section className={styles.card} aria-label={`${title} details`}>
             {sections.map((section, index) => (
-              <article className={styles.item} key={section.title} data-gsap="legal-card-item">
+              <article className={styles.item} key={section.title}>
                 <div className={styles.number} aria-hidden="true">
                   {index + 1}
                 </div>

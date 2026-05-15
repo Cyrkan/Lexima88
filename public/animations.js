@@ -146,21 +146,6 @@
       );
     }
 
-    revealSequence('[data-gsap="legal-hero"]', '[data-gsap="legal-hero-item"]', {
-      y: 20,
-      start: "top 92%",
-      stagger: 0.13,
-      duration: 0.72,
-    });
-
-    revealSequence('[data-gsap="legal-card"]', '[data-gsap="legal-card-item"]', {
-      y: 24,
-      start: "top 88%",
-      stagger: 0.08,
-      duration: 0.58,
-      delay: 0.08,
-    });
-
     revealSequence('[data-gsap="services-heading"]', '[data-gsap="services-heading-item"]', {
       y: 32,
       start: "top 86%",
