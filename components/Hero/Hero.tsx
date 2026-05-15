@@ -13,8 +13,8 @@ export function Hero() {
         <Image
           src="/images/hero-orbit.avif"
           alt=""
-          width={1896}
-          height={1909}
+          width={1900}
+          height={1900}
           priority
           fetchPriority="high"
           quality={70}
