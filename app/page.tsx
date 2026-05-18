@@ -1,3 +1,4 @@
+import { AnimationsTrigger } from "@/components/AnimationLoader/AnimationsTrigger";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { AboutSection } from "@/sections/AboutSection";
@@ -17,6 +18,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <AnimationsTrigger />
     </>
   );
 }

@@ -8,9 +8,12 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  var mm = gsap.matchMedia();
+  function runAnimations() {
+    gsap.killTweensOf("[data-gsap]");
+    ScrollTrigger.getAll().forEach(function (st) {
+      st.kill();
+    });
 
-  mm.add("(prefers-reduced-motion: no-preference)", function () {
     function revealSequence(trigger, targets, options) {
       var settings = options || {};
       var elements = gsap.utils.toArray(targets);
@@ -189,6 +192,8 @@
       stagger: 0.18,
       duration: 0.65,
     });
-  });
-})();
+  }
 
+  window.__averisRunAnimations = runAnimations;
+  runAnimations();
+})();
