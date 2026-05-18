@@ -1,27 +1,22 @@
-import Image from "next/image";
 import styles from "./Hero.module.scss";
 
 export function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
-      <div className={styles.glowOne} data-gsap="hero-glow-one" />
-      <div className={styles.glowTwo} data-gsap="hero-glow-two" />
-      <div className={styles.starfield} aria-hidden="true" data-gsap="hero-stars" />
-      <div className={styles.orbitLineOne} aria-hidden="true" data-gsap="hero-orbit-one" />
-      <div className={styles.orbitLineTwo} aria-hidden="true" data-gsap="hero-orbit-two" />
-      <div className={styles.imageWrap} aria-hidden="true" data-gsap="hero-image">
-        <Image
-          src="/images/hero-planet-figma.avif"
-          alt=""
-          width={948}
-          height={694}
-          priority
-          fetchPriority="high"
-          sizes="(max-width: 767px) 600px, (max-width: 1023px) 948px, 948px"
-          className={styles.heroImage}
-          data-gsap="hero-image-core"
-        />
-      </div>
+      <picture className={styles.bg}>
+        <source media="(max-width: 480px)" srcSet="/images/hero-bg-360.avif" type="image/avif" />
+        <source media="(max-width: 480px)" srcSet="/images/hero-bg-360.webp" type="image/webp" />
+        <source media="(max-width: 480px)" srcSet="/images/hero-bg-360.png" />
+        <source media="(max-width: 1023px)" srcSet="/images/hero-bg-768.avif" type="image/avif" />
+        <source media="(max-width: 1023px)" srcSet="/images/hero-bg-768.webp" type="image/webp" />
+        <source media="(max-width: 1023px)" srcSet="/images/hero-bg-768.png" />
+        <source media="(max-width: 1599px)" srcSet="/images/hero-bg-1440.avif" type="image/avif" />
+        <source media="(max-width: 1599px)" srcSet="/images/hero-bg-1440.webp" type="image/webp" />
+        <source media="(max-width: 1599px)" srcSet="/images/hero-bg-1440.png" />
+        <source srcSet="/images/hero-bg-1920.avif" type="image/avif" />
+        <source srcSet="/images/hero-bg-1920.webp" type="image/webp" />
+        <img src="/images/hero-bg-1920.png" alt="" fetchPriority="high" />
+      </picture>
       <div className={styles.content}>
         <p className={styles.eyebrow} data-gsap="hero-eyebrow">Performance Marketing Agency</p>
         <h1 id="hero-title" data-gsap="hero-title">Customer Engagement &amp; Performance Marketing</h1>

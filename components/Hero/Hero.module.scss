@@ -1,111 +1,24 @@
 @use "../../styles/mixins" as *;
 
 .hero {
-  background:
-    radial-gradient(circle at 17% 92%, rgba(85, 80, 139, 0.7) 0, rgba(85, 80, 139, 0) 25%),
-    linear-gradient(118deg, #0b0d16 4%, #101328 38%, #111f5d 100%);
+  background: var(--color-navy);
   height: 760px;
   overflow: hidden;
   position: relative;
 }
 
-.hero::before {
-  background: linear-gradient(116deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.035) 44%, rgba(255, 255, 255, 0) 68%);
-  content: "";
+.bg {
+  display: block;
   inset: 0;
-  pointer-events: none;
   position: absolute;
-  transform: translateX(-24%);
-  z-index: 1;
-}
+  z-index: 0;
 
-.imageWrap {
-  height: 694px;
-  overflow: hidden;
-  position: absolute;
-  right: max(0px, calc((100vw - 1920px) / 2));
-  top: 65px;
-  width: 948px;
-}
-
-.heroImage {
-  clip-path: ellipse(55% 74% at 66% 75%);
-  filter: brightness(1.12) saturate(1.08);
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-}
-
-.starfield {
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.45px),
-    radial-gradient(circle, rgba(57, 155, 237, 0.54) 0 1px, transparent 1.35px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.48) 0 0.75px, transparent 1.15px);
-  background-position: 0 0, 48px 24px, 116px 78px;
-  background-size: 148px 148px, 212px 212px, 284px 284px;
-  height: 1451.1px;
-  left: calc((100vw - 1920px) / 2 + 670.82px);
-  mask-image: radial-gradient(circle at 58% 44%, rgba(0, 0, 0, 0.95) 0 38%, rgba(0, 0, 0, 0.5) 60%, transparent 84%);
-  opacity: 0.27;
-  pointer-events: none;
-  position: absolute;
-  top: 60.91px;
-  width: 1636.6px;
-}
-
-.orbitLineOne,
-.orbitLineTwo {
-  border: 1px solid rgba(57, 155, 237, 0.28);
-  border-left-color: transparent;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 18px rgba(57, 155, 237, 0.32));
-  pointer-events: none;
-  position: absolute;
-}
-
-.orbitLineOne {
-  height: 730px;
-  right: -190px;
-  top: 126px;
-  transform: rotate(-28deg);
-  width: 650px;
-}
-
-.orbitLineTwo {
-  height: 590px;
-  right: -158px;
-  top: 206px;
-  transform: rotate(18deg);
-  width: 520px;
-}
-
-.glowOne,
-.glowTwo {
-  border-radius: 99999px;
-  pointer-events: none;
-  position: absolute;
-}
-
-.glowOne {
-  background: #2463eb;
-  filter: blur(200px);
-  height: 800px;
-  left: calc(var(--page-gutter) + 722px);
-  opacity: 0.4;
-  top: -20px;
-  width: 800px;
-}
-
-.glowTwo {
-  background: #6366f1;
-  filter: blur(150px);
-  height: 600px;
-  left: calc(var(--page-gutter) + 922px);
-  opacity: 0.3;
-  top: 80px;
-  width: 600px;
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
 }
 
 .content {
@@ -113,11 +26,11 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  left: var(--page-gutter);
   max-width: 894px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: var(--page-gutter);
   width: min(894px, calc(100% - (var(--page-gutter) * 2)));
   z-index: 1;
 
@@ -185,34 +98,8 @@
 }
 
 @media (min-width: 1920px) {
-  .content {
-    max-width: 894px;
-  }
-
   .copy {
     max-width: 748px;
-  }
-}
-
-@media (max-width: 1599px) {
-  .imageWrap {
-    height: 694px;
-    right: 0;
-    top: 155px;
-    width: 948px;
-  }
-
-  .starfield {
-    height: 1224.04px;
-    left: 502.48px;
-    top: 60.72px;
-    width: 1228.72px;
-  }
-}
-
-@media (max-width: 1399px) and (min-width: 1280px) {
-  .imageWrap {
-    right: calc(100vw - 1440px);
   }
 }
 
@@ -223,13 +110,6 @@
     h1 {
       font-size: 62px;
     }
-  }
-
-  .imageWrap {
-    height: 659px;
-    right: -250px;
-    top: 180px;
-    width: 900px;
   }
 }
 
@@ -255,55 +135,11 @@
     line-height: 29.25px;
     max-width: 577px;
   }
-
-  .imageWrap {
-    height: 694px;
-    opacity: 1;
-    right: -575px;
-    top: 356px;
-    width: 948px;
-  }
-
-  .starfield {
-    height: 1230.68px;
-    left: 422.57px;
-    top: 320px;
-    width: 1257.42px;
-  }
 }
 
 @media (max-width: 767px) {
   .hero {
     height: 700px;
-  }
-
-  .imageWrap {
-    height: 439px;
-    opacity: 1;
-    right: -365px;
-    top: 465px;
-    width: 600px;
-  }
-
-  .starfield {
-    height: 799.2px;
-    left: 199.38px;
-    top: 420px;
-    width: 810.19px;
-  }
-
-  .glowOne {
-    height: 440px;
-    left: 10%;
-    top: 40px;
-    width: 440px;
-  }
-
-  .glowTwo {
-    height: 380px;
-    left: 32%;
-    top: 120px;
-    width: 380px;
   }
 
   .content {
@@ -345,18 +181,5 @@
 
   .eyebrow {
     font-size: 10px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero::before,
-  .imageWrap,
-  .heroImage,
-  .starfield,
-  .orbitLineOne,
-  .orbitLineTwo,
-  .glowOne,
-  .glowTwo {
-    transform: none;
   }
 }
